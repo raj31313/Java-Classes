@@ -1,0 +1,115 @@
+--sql questions 
+1)
+SELECT * FROM EMP;
+2)
+select distinct job from emp;
+3)
+select * from emp WHERE job ='MANAGER';
+4)
+select * from emp where HIREDATE < 1981;
+5) 
+SELECT Empno, Ename, Job, Hiredate, to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') as experience from emp;
+6) 
+SELECT  Empno, Ename, Sal,  to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') as experience FROM emp where MGR=7639;
+7) 
+select * from emp where SAL > COMM;
+8) 
+SELECT Empno, Ename, Job, Hiredate,to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') as experience from emp where sal/30 > 100;
+9) 
+select * from emp where deptno = 10 or deptno = 20;
+10) 
+select * from emp GROUP BY job, where job='MANAGER';
+11)
+select ename from emp where job = 'CLERK' and Deptno = 20;
+12) 
+select * from emp where ename = 'SMITH';
+13) 
+select Empno, Ename, Deptno from emp ;
+14) 
+select Empno, Deptno from emp;
+15)
+select distinct deptno from emp; 
+16) 
+select ename , (sal*0.2)+sal as incrsal from emp where sal > 3000 ;
+17) 
+select ename, sal*0.15,to_char(sal,'$99,999.000') from emp;
+18) 
+select ename ||' and his job is ' || job from emp;
+19) 
+select Empno, Ename, Sal from emp where job = 'MANAGER';
+20)
+select ename , job from emp 
+21) 
+SELECT empno
+FROM emp
+GROUP BY empno
+HAVING COUNT(empno) > 1;
+
+22) 
+select empno,sal,comm from emp;
+23) 
+select distinct deptno,job from emp ;
+24) 
+selct * from emp where ename= 'BLAKE';
+25) 
+select * from emp where job = 'CLERK';
+26) 
+SELECT * FROM emp
+WHERE HIREDATE = TO_DATE('1981-05-01', 'YYYY-MM-DD');
+27) 
+SELECT * FROM emp where sal > 3500 ; 
+28) 
+select Empno, Ename, Sal from emp  where HIREDATE >= TO_DATE('1981-04-01', 'YYYY-MM-DD');
+
+29) 
+SELECT * from emp where to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') > 10;
+
+30) 
+select * from emp where job = 'MANAGER';
+31) 
+select * FROM emp where job = 'CLERK' and to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') > 8; 
+32) 
+select Empno, Ename, Sal,job from emp  where sal*12 < 34000 and comm is not null and comm < sal and job = 'SALESMAN';
+33) 
+select * from emp  where job = 'SALESMAN' and comm is not NULL;
+34) 
+select * from emp where deptno = 30 and comm > sal;
+35) 
+SELECT (99 + LEVEL) AS three_digit_number FROM dual
+CONNECT BY LEVEL <= 900
+36) 
+select * from emp
+where rownum <= 5;
+37)
+select emps empno, ename, job, sal from emp ; 
+38) 
+select distinct deptno from emp ; 
+39)
+select distinct job , deptno from emp ; 
+40) 
+select * from emp where ename = 'MILLER';
+41) 
+select * from emp where deptno = 10; 
+42) 
+select * from emp where job = 'SALESMAN';
+43) 
+select * from emp where to_char(HIREDATE , 'yyyy') < 1984 ;
+44) 
+select * from emp where Sal>2500;
+45) 
+SELECT empno, ename,HIREDATE FROM emp
+WHERE HIREDATE >= TO_DATE('1982-04-01', 'YYYY-MM-DD');
+46) 
+SELECT  empno, ename, sal,sal/30 as dailysal from emp ; 
+47) 
+select empno, ename, sal, to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') as experience from emp where job = 'ANALYST';
+48) 
+SELECT * from emp where to_char(sysdate , 'yyyy')- to_char(hiredate , 'yyyy') > 6.5 ; 
+49) 
+SELECT empno, ename,HIREDATE FROM emp
+WHERE HIREDATE >= TO_DATE('1981-07-01', 'YYYY-MM-DD');
+50) 
+select * from emp where deptno = 10 and job = 'CLERK';
+51) 
+SELECT * FROM emp
+WHERE HIREDATE < TO_DATE('1985-01-01', 'YYYY-MM-DD')and sal > 3000;
